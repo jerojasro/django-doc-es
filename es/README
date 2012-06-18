@@ -1,7 +1,23 @@
 Translation of the Django tutorial to spanish
 
-# How to collaborate
+How to collaborate
+##################
 
 Choose one of the available .PO files in the es/ folder (see the PROGRESS
 file), mark yourself as translator, get going with it.
 
+Workflow
+########
+
+* Translating text: edit the PO file; translate the text there as usual.
+* Updating the .txt files: use po4a-translate. You should issue the command as follows:
+
+    po4a-translate -k 0 -f text -M utf8 -L utf8 -m <ORIGINAL-RST-FILE> -l <TARGET-RST-FILE> -p <PO-FILE>
+
+  For example, to translate the overview:
+
+    po4a-translate -k 0 -f text -M utf8 -L utf8 -m ../original/intro/overview.txt -l rst/intro/overview.txt -p po/overview.po
+
+* Generating the HTML version of the help: go into srt/, and type: make. That
+  will create a _build/ directory with the latest HTML version of the Django
+  documentation.
