@@ -1,0 +1,929 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# Igor Támara <igor@tamarapatino.org>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2012-03-26 23:21-0500\n"
+"PO-Revision-Date: 2012-03-31 11:44-0500\n"
+"Last-Translator: Igor Támara <igor@tamarapatino.org>\n"
+"Language-Team: slec's translation team\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.0\n"
+
+#. type: Plain text
+#: orig/overview.txt:1
+#, no-wrap
+msgid "==================\n"
+msgstr "===================\n"
+
+#. type: Plain text
+#: orig/overview.txt:3
+#, no-wrap
+msgid ""
+"Django at a glance\n"
+"==================\n"
+msgstr ""
+"Un vistazo a Django\n"
+"===================\n"
+
+#. type: Plain text
+#: orig/overview.txt:8
+msgid ""
+"Because Django was developed in a fast-paced newsroom environment, it was "
+"designed to make common Web-development tasks fast and easy. Here's an "
+"informal overview of how to write a database-driven Web app with Django."
+msgstr ""
+"Dado que Django se desarrolló en un ambiente editorial con mucho movimiento, "
+"fue diseñado para hacer que las tareas comunes del ambiente web fueran "
+"rápidas y fáciles. A continuación mostramos un vistazo informal de cómo "
+"escribir una aplicación web basada en bases de datos con Django."
+
+#. type: Plain text
+#: orig/overview.txt:14
+msgid ""
+"The goal of this document is to give you enough technical specifics to "
+"understand how Django works, but this isn't intended to be a tutorial or "
+"reference -- but we've got both! When you're ready to start a project, you "
+"can :doc:`start with the tutorial </intro/tutorial01>` or :doc:`dive right "
+"into more detailed documentation </topics/index>`."
+msgstr ""
+"El objetivo de este documento es ofrecerle las especificidades técnicas "
+"necesarias para entender cómo funciona Django, no es un tutorial o una "
+"referencia -- que de hecho tenemos ambas! Cuando esté listo para iniciar un "
+"proyecto puede :doc:`comenzar con el tutorial </intro/tutorial01>` o :doc:"
+"`sumergirse en documentación más detallada </topics/index>`."
+
+#. type: Plain text
+#: orig/overview.txt:16
+#, no-wrap
+msgid ""
+"Design your model\n"
+"=================\n"
+msgstr ""
+"Diseñe su modelo\n"
+"================\n"
+
+#. type: Plain text
+#: orig/overview.txt:21
+msgid ""
+"Although you can use Django without a database, it comes with an object-"
+"relational mapper in which you describe your database layout in Python code."
+msgstr ""
+"Aunque puede usar Django sin una base de datos, viene con un mapeo objeto-"
+"relacional en el cual puede describir la estructura de la base de datos en "
+"código Python."
+
+#. type: Plain text
+#: orig/overview.txt:26
+msgid ""
+"The :doc:`data-model syntax </topics/db/models>` offers many rich ways of "
+"representing your models -- so far, it's been solving two years' worth of "
+"database-schema problems. Here's a quick example, which might be saved in "
+"the file ``mysite/news/models.py``::"
+msgstr ""
+"La :doc:`sintaxis del modelo de datos </topics/db/models>` ofrece variadas "
+"formas enriquecidas para represenar sus modelos -- hasta ahora ha resuelto "
+"dos años de problemas relacionados con esquema de base de datos. A "
+"continuación un ejemplo rápido, que puede almacenarse en el fichero ``mysite/"
+"news/models.py``::"
+
+#. type: Plain text
+#: orig/overview.txt:29
+#, no-wrap
+msgid ""
+"    class Reporter(models.Model):\n"
+"        full_name = models.CharField(max_length=70)\n"
+msgstr ""
+"    class Reporter(models.Model):\n"
+"        full_name = models.CharField(max_length=70)\n"
+
+#. type: Plain text
+#: orig/overview.txt:32
+#, no-wrap
+msgid ""
+"        def __unicode__(self):\n"
+"            return self.full_name\n"
+msgstr ""
+"        def __unicode__(self):\n"
+"            return self.full_name\n"
+
+#. type: Plain text
+#: orig/overview.txt:38 orig/overview.txt:147
+#, no-wrap
+msgid ""
+"    class Article(models.Model):\n"
+"        pub_date = models.DateTimeField()\n"
+"        headline = models.CharField(max_length=200)\n"
+"        content = models.TextField()\n"
+"        reporter = models.ForeignKey(Reporter)\n"
+msgstr ""
+"    class Article(models.Model):\n"
+"        pub_date = models.DateTimeField()\n"
+"        headline = models.CharField(max_length=200)\n"
+"        content = models.TextField()\n"
+"        reporter = models.ForeignKey(Reporter)\n"
+
+#. type: Plain text
+#: orig/overview.txt:41
+#, no-wrap
+msgid ""
+"        def __unicode__(self):\n"
+"            return self.headline\n"
+msgstr ""
+"        def __unicode__(self):\n"
+"            return self.headline\n"
+
+#. type: Plain text
+#: orig/overview.txt:43
+#, no-wrap
+msgid ""
+"Install it\n"
+"==========\n"
+msgstr ""
+"Instálelo\n"
+"=========\n"
+
+#. type: Plain text
+#: orig/overview.txt:47
+msgid ""
+"Next, run the Django command-line utility to create the database tables "
+"automatically:"
+msgstr ""
+"A continuación, ejecute la utilidad desde la línea de comandos de Django "
+"para crear las tablas en la base de datos de forma automática:"
+
+#. type: Plain text
+#: orig/overview.txt:49
+msgid ".. code-block:: bash"
+msgstr ".. code-block:: bash"
+
+#. type: Plain text
+#: orig/overview.txt:51
+#, no-wrap
+msgid "    manage.py syncdb\n"
+msgstr "    manage.py syncdb\n"
+
+#. type: Plain text
+#: orig/overview.txt:54
+msgid ""
+"The :djadmin:`syncdb` command looks at all your available models and creates "
+"tables in your database for whichever tables don't already exist."
+msgstr ""
+"La orden :djadmin:`syncdb` revisa todos sus modelos disponibles y crea "
+"aquellas tablas en su base de datos que todavía no existen."
+
+#. type: Plain text
+#: orig/overview.txt:56
+#, no-wrap
+msgid ""
+"Enjoy the free API\n"
+"==================\n"
+msgstr ""
+"Disfrute el API gratuito\n"
+"========================\n"
+
+#. type: Plain text
+#: orig/overview.txt:60
+msgid ""
+"With that, you've got a free, and rich, :doc:`Python API </topics/db/"
+"queries>` to access your data. The API is created on the fly, no code "
+"generation necessary::"
+msgstr ""
+"Con esto tiene un :doc:`Python API </topics/db/queries>` rico y de forma "
+"gratuita para acceder a su información.  El API se crea instantáneamente, no "
+"se requiere la generación de código::"
+
+#. type: Plain text
+#: orig/overview.txt:63
+#, no-wrap
+msgid ""
+"    # Import the models we created from our \"news\" app\n"
+"    >>> from news.models import Reporter, Article\n"
+msgstr ""
+"    # Import the models we created from our \"news\" app\n"
+"    >>> from news.models import Reporter, Article\n"
+
+#. type: Plain text
+#: orig/overview.txt:67
+#, no-wrap
+msgid ""
+"    # No reporters are in the system yet.\n"
+"    >>> Reporter.objects.all()\n"
+"    []\n"
+msgstr ""
+"    # Todavía no hay reporteros en el sistema.\n"
+"    >>> Reporter.objects.all()\n"
+"    []\n"
+
+#. type: Plain text
+#: orig/overview.txt:70
+#, no-wrap
+msgid ""
+"    # Create a new Reporter.\n"
+"    >>> r = Reporter(full_name='John Smith')\n"
+msgstr ""
+"    # Crear un nuevo Reportero.\n"
+"    >>> r = Reporter(full_name='John Smith')\n"
+
+#. type: Plain text
+#: orig/overview.txt:73
+#, no-wrap
+msgid ""
+"    # Save the object into the database. You have to call save() explicitly.\n"
+"    >>> r.save()\n"
+msgstr ""
+"    # Se almacena el objeto en la base de datos. Tiene que invocar save() explícitamente.\n"
+"    >>> r.save()\n"
+
+#. type: Plain text
+#: orig/overview.txt:77
+#, no-wrap
+msgid ""
+"    # Now it has an ID.\n"
+"    >>> r.id\n"
+"    1\n"
+msgstr ""
+"    # Ahora tiene un ID.\n"
+"    >>> r.id\n"
+"    1\n"
+
+#. type: Plain text
+#: orig/overview.txt:81
+#, no-wrap
+msgid ""
+"    # Now the new reporter is in the database.\n"
+"    >>> Reporter.objects.all()\n"
+"    [<Reporter: John Smith>]\n"
+msgstr ""
+"    # Ahora el reportero está en la base de datos.\n"
+"    >>> Reporter.objects.all()\n"
+"    [<Reporter: John Smith>]\n"
+
+#. type: Plain text
+#: orig/overview.txt:85
+#, no-wrap
+msgid ""
+"    # Fields are represented as attributes on the Python object.\n"
+"    >>> r.full_name\n"
+"    'John Smith'\n"
+msgstr ""
+"    # Los campos se representan como atributos del objeto Python.\n"
+"    >>> r.full_name\n"
+"    'John Smith'\n"
+
+#. type: Plain text
+#: orig/overview.txt:97
+#, no-wrap
+msgid ""
+"    # Django provides a rich database lookup API.\n"
+"    >>> Reporter.objects.get(id=1)\n"
+"    <Reporter: John Smith>\n"
+"    >>> Reporter.objects.get(full_name__startswith='John')\n"
+"    <Reporter: John Smith>\n"
+"    >>> Reporter.objects.get(full_name__contains='mith')\n"
+"    <Reporter: John Smith>\n"
+"    >>> Reporter.objects.get(id=2)\n"
+"    Traceback (most recent call last):\n"
+"        ...\n"
+"    DoesNotExist: Reporter matching query does not exist.\n"
+msgstr ""
+"    # Django ofrece un API de búsqueda rico.\n"
+"    >>> Reporter.objects.get(id=1)\n"
+"    <Reporter: John Smith>\n"
+"    >>> Reporter.objects.get(full_name__startswith='John')\n"
+"    <Reporter: John Smith>\n"
+"    >>> Reporter.objects.get(full_name__contains='mith')\n"
+"    <Reporter: John Smith>\n"
+"    >>> Reporter.objects.get(id=2)\n"
+"    Traceback (most recent call last):\n"
+"        ...\n"
+"    DoesNotExist: Reporter matching query does not exist.\n"
+
+#. type: Plain text
+#: orig/overview.txt:103
+#, no-wrap
+msgid ""
+"    # Create an article.\n"
+"    >>> from datetime import datetime\n"
+"    >>> a = Article(pub_date=datetime.now(), headline='Django is cool',\n"
+"    ...     content='Yeah.', reporter=r)\n"
+"    >>> a.save()\n"
+msgstr ""
+"    # Crear un artículo.\n"
+"    >>> from datetime import datetime\n"
+"    >>> a = Article(pub_date=datetime.now(), headline='Django is cool',\n"
+"    ...     content='Yeah.', reporter=r)\n"
+"    >>> a.save()\n"
+
+#. type: Plain text
+#: orig/overview.txt:107
+#, no-wrap
+msgid ""
+"    # Now the article is in the database.\n"
+"    >>> Article.objects.all()\n"
+"    [<Article: Django is cool>]\n"
+msgstr ""
+"    # Ahora el artículo está en la base de datos.\n"
+"    >>> Article.objects.all()\n"
+"    [<Article: Django is cool>]\n"
+
+#. type: Plain text
+#: orig/overview.txt:112
+#, no-wrap
+msgid ""
+"    # Article objects get API access to related Reporter objects.\n"
+"    >>> r = a.reporter\n"
+"    >>> r.full_name\n"
+"    'John Smith'\n"
+msgstr ""
+"    # Los objetos Article obtienen una API para acceder a los objetos Reporter relacionados.\n"
+"    >>> r = a.reporter\n"
+"    >>> r.full_name\n"
+"    'John Smith'\n"
+
+#. type: Plain text
+#: orig/overview.txt:116
+#, no-wrap
+msgid ""
+"    # And vice versa: Reporter objects get API access to Article objects.\n"
+"    >>> r.article_set.all()\n"
+"    [<Article: Django is cool>]\n"
+msgstr ""
+"    # Y vice versa: los objetos Reporter obtienen una API para acceder a los objetos Article.\n"
+"    >>> r.article_set.all()\n"
+"    [<Article: Django is cool>]\n"
+
+#. type: Plain text
+#: orig/overview.txt:122
+#, no-wrap
+msgid ""
+"    # The API follows relationships as far as you need, performing efficient\n"
+"    # JOINs for you behind the scenes.\n"
+"    # This finds all articles by a reporter whose name starts with \"John\".\n"
+"    >>> Article.objects.filter(reporter__full_name__startswith=\"John\")\n"
+"    [<Article: Django is cool>]\n"
+msgstr ""
+"    # La API sigue las relaciones tan profundo como lo requiera, ejecutando\n"
+"    # JOINs eficientes tras bambalinas.\n"
+"    # A continuación se encuentran todos los artículos de un reportero cuyo nombre comienza con \"John\".\n"
+"    >>> Article.objects.filter(reporter__full_name__startswith=\"John\")\n"
+"    [<Article: Django is cool>]\n"
+
+#. type: Plain text
+#: orig/overview.txt:126
+#, no-wrap
+msgid ""
+"    # Change an object by altering its attributes and calling save().\n"
+"    >>> r.full_name = 'Billy Goat'\n"
+"    >>> r.save()\n"
+msgstr ""
+"    # Se cambia un objeto modificando sus atributos e invocando el método save().\n"
+"    >>> r.full_name = 'Billy Goat'\n"
+"    >>> r.save()\n"
+
+#. type: Plain text
+#: orig/overview.txt:129
+#, no-wrap
+msgid ""
+"    # Delete an object with delete().\n"
+"    >>> r.delete()\n"
+msgstr ""
+"    # Se elimina un objecto con delete().\n"
+"    >>> r.delete()\n"
+
+#. type: Plain text
+#: orig/overview.txt:131
+#, no-wrap
+msgid ""
+"A dynamic admin interface: it's not just scaffolding -- it's the whole house\n"
+"============================================================================\n"
+msgstr ""
+"Una interfaz de administración dinámica: No solamente el andamiaje -- es la "
+"casa entera\n"
+"============================================================================"
+"===========\n"
+
+#. type: Plain text
+#: orig/overview.txt:137
+msgid ""
+"Once your models are defined, Django can automatically create a "
+"professional, production ready :doc:`administrative interface </ref/contrib/"
+"admin/index>` -- a Web site that lets authenticated users add, change and "
+"delete objects. It's as easy as registering your model in the admin site::"
+msgstr ""
+"Cuando haya definido sus modelos, Django puede crear automáticamente una "
+"interfaz administrativa profesional </ref/contrib/admin/index>`, lista para "
+"producción : Un sitio web que le permite a usuarios autenticados, añadir, "
+"cambiar y eliminar objetos.  Basta con registrar su modelo con el sitio "
+"administrativo::"
+
+#. type: Plain text
+#: orig/overview.txt:139
+#, no-wrap
+msgid "    # In models.py...\n"
+msgstr "    # En models.py...\n"
+
+#. type: Plain text
+#: orig/overview.txt:141
+#, no-wrap
+msgid "    from django.db import models\n"
+msgstr "    from django.db import models\n"
+
+#. type: Plain text
+#: orig/overview.txt:150
+#, no-wrap
+msgid "    # In admin.py in the same directory...\n"
+msgstr "    # En admin.py en el mismo directorio...\n"
+
+#. type: Plain text
+#: orig/overview.txt:153
+#, no-wrap
+msgid ""
+"    import models\n"
+"    from django.contrib import admin\n"
+msgstr ""
+"    import models\n"
+"    from django.contrib import admin\n"
+
+#. type: Plain text
+#: orig/overview.txt:155
+#, no-wrap
+msgid "    admin.site.register(models.Article)\n"
+msgstr "    admin.site.register(models.Article)\n"
+
+#. type: Plain text
+#: orig/overview.txt:159
+msgid ""
+"The philosophy here is that your site is edited by a staff, or a client, or "
+"maybe just you -- and you don't want to have to deal with creating backend "
+"interfaces just to manage content."
+msgstr ""
+"Aquí la filosofía es que su sitio lo edita los empleados, un cliente o usted "
+"mismo, y no tiene que preocuparse por hacer interfaces de back-end para "
+"administrar su contenido."
+
+#. type: Plain text
+#: orig/overview.txt:163
+msgid ""
+"One typical workflow in creating Django apps is to create models and get the "
+"admin sites up and running as fast as possible, so your staff (or clients) "
+"can start populating data. Then, develop the way data is presented to the "
+"public."
+msgstr ""
+"Un flujo de trabajo típico al crear aplicaciones Django es crear los modelos "
+"y echar a andar el sitio administrativo tan rápido como sea posible, de "
+"forma que el personal(o los clientes) puedan comenzar a diligenciar datos.  "
+"Posteriormente desarrollar la forma como los datos serán presentados al "
+"público."
+
+#. type: Plain text
+#: orig/overview.txt:165
+#, no-wrap
+msgid ""
+"Design your URLs\n"
+"================\n"
+msgstr ""
+"Diseñe sus URLs\n"
+"===============\n"
+
+#. type: Plain text
+#: orig/overview.txt:170
+msgid ""
+"A clean, elegant URL scheme is an important detail in a high-quality Web "
+"application. Django encourages beautiful URL design and doesn't put any "
+"cruft in URLs, like ``.php`` or ``.asp``."
+msgstr ""
+"Un detalle importante en una aplicación web de gran calidad es un esquema de "
+"URLs limpio y elegante.  Django anima el diseño de URLs hermosas y no añade "
+"cosas como ``.php`` o ``.asp``."
+
+#. type: Plain text
+#: orig/overview.txt:175
+msgid ""
+"To design URLs for an app, you create a Python module called a :doc:`URLconf "
+"</topics/http/urls>`. A table of contents for your app, it contains a simple "
+"mapping between URL patterns and Python callback functions. URLconfs also "
+"serve to decouple URLs from Python code."
+msgstr ""
+"Para diseñar URLs para una aplicación, se crea un módulo de Python llamado "
+":doc:`URLconf </topics/http/urls>`.  Es una tabla de contenidos para su "
+"aplicación que contiene una relación sencilla entre patrones de URLs y "
+"funciones de respuesta en Python. Las URLconfs también sirven para "
+"desacoplar las URLs de su código Python."
+
+#. type: Plain text
+#: orig/overview.txt:178
+msgid ""
+"Here's what a URLconf might look like for the ``Reporter``/``Article`` "
+"example above::"
+msgstr ""
+"A continuación mostramos cómo podría lucir un URLconf para el ejemplo "
+"``Reportero``/``Artículo`` anterior"
+
+#. type: Plain text
+#: orig/overview.txt:180
+#, no-wrap
+msgid "    from django.conf.urls import patterns, url, include\n"
+msgstr "    from django.conf.urls import patterns, url, include\n"
+
+#. type: Plain text
+#: orig/overview.txt:186
+#, no-wrap
+msgid ""
+"    urlpatterns = patterns('',\n"
+"        (r'^articles/(\\d{4})/$', 'news.views.year_archive'),\n"
+"        (r'^articles/(\\d{4})/(\\d{2})/$', 'news.views.month_archive'),\n"
+"        (r'^articles/(\\d{4})/(\\d{2})/(\\d+)/$', 'news.views.article_detail'),\n"
+"    )\n"
+msgstr ""
+"    urlpatterns = patterns('',\n"
+"        (r'^articles/(\\d{4})/$', 'news.views.year_archive'),\n"
+"        (r'^articles/(\\d{4})/(\\d{2})/$', 'news.views.month_archive'),\n"
+"        (r'^articles/(\\d{4})/(\\d{2})/(\\d+)/$', 'news.views.article_detail'),\n"
+"    )\n"
+
+#. type: Plain text
+#: orig/overview.txt:194
+msgid ""
+"The code above maps URLs, as simple regular expressions, to the location of "
+"Python callback functions (\"views\"). The regular expressions use "
+"parenthesis to \"capture\" values from the URLs. When a user requests a "
+"page, Django runs through each pattern, in order, and stops at the first one "
+"that matches the requested URL. (If none of them matches, Django calls a "
+"special-case 404 view.)  This is blazingly fast, because the regular "
+"expressions are compiled at load time."
+msgstr ""
+"El código anterior relaciona URLs, como expresiones regulares sencillas, al "
+"lugar donde se encuentran las funciones Python de respuesta (\"views\").  Las "
+"expresiones regulares usan paréntesis para \"capturar\" valores de las URLs.  "
+"Cuando un usuario solicita una página, Django evalúa cada patrón, en orden y "
+"se detiene en el primero que concuerda con el URL solicitado. (Si ninguno "
+"concuerda, Django invoca una vista especial 404.)  Es increíblemente rápido, "
+"porque las expresiones regulares se precompilan al momento de carga."
+
+#. type: Plain text
+#: orig/overview.txt:198
+msgid ""
+"Once one of the regexes matches, Django imports and calls the given view, "
+"which is a simple Python function. Each view gets passed a request object -- "
+"which contains request metadata -- and the values captured in the regex."
+msgstr ""
+"Una vez que la expresión regular coincide, Django importa y llama la función "
+"dada, que es una función sencilla en Python.  Cada vista recibe un objeto "
+"request (Que contiene los metadatos de la solicitud) y los valores "
+"capturados en la expresión regular."
+
+#. type: Plain text
+#: orig/overview.txt:202
+msgid ""
+"For example, if a user requested the URL \"/articles/2005/05/39323/\", "
+"Django would call the function ``news.views.article_detail(request, '2005', "
+"'05', '39323')``."
+msgstr ""
+"Por ejemplo, si un usuario solicitó la URL \"/articles/2005/05/39323/\", "
+"Django invocaría la función ``news.views.article_detail(request, '2005', "
+"'05', '39323')``."
+
+#. type: Plain text
+#: orig/overview.txt:204
+#, no-wrap
+msgid ""
+"Write your views\n"
+"================\n"
+msgstr ""
+"Escriba sus vistas\n"
+"==================\n"
+
+#. type: Plain text
+#: orig/overview.txt:210
+msgid ""
+"Each view is responsible for doing one of two things: Returning an :class:"
+"`~django.http.HttpResponse` object containing the content for the requested "
+"page, or raising an exception such as :class:`~django.http.Http404`.  The "
+"rest is up to you."
+msgstr ""
+"Cada vista se encarga de hacer una o dos cosas: Retornar un objeto "
+":class:`~django.http.HttpResponse` que incluye el contenido de la página "
+"solicitada, o disparar una excepción tal como :class:`~django.http.Http404`. "
+" El resto depende de usted."
+
+#. type: Plain text
+#: orig/overview.txt:214
+msgid ""
+"Generally, a view retrieves data according to the parameters, loads a "
+"template and renders the template with the retrieved data. Here's an example "
+"view for ``year_archive`` from above::"
+msgstr ""
+"Generalmente, una vista recupera datos a partir de los parámetros, carga una "
+"plantilla y la muestra con la información recuperada. A continuación una "
+"vista de ejemplo para ``year_archive`` del ejemplo anterior::"
+
+#. type: Plain text
+#: orig/overview.txt:218
+#, no-wrap
+msgid ""
+"    def year_archive(request, year):\n"
+"        a_list = Article.objects.filter(pub_date__year=year)\n"
+"        return render_to_response('news/year_archive.html', {'year': year, 'article_list': a_list})\n"
+msgstr ""
+"    def year_archive(request, year):\n"
+"        a_list = Article.objects.filter(pub_date__year=year)\n"
+"        return render_to_response('news/year_archive.html', {'year': year, "
+"'article_list': a_list})\n"
+
+#. type: Plain text
+#: orig/overview.txt:222
+msgid ""
+"This example uses Django's :doc:`template system </topics/templates>`, which "
+"has several powerful features but strives to stay simple enough for non-"
+"programmers to use."
+msgstr ""
+"Este ejemplo usa el :doc:`sistema de plantillas </topics/templates>`, que "
+"cuenta con características poderosas pero se mantiene lo suficientemente "
+"sencillo para que los no programadores puedan usarlo."
+
+#. type: Plain text
+#: orig/overview.txt:224
+#, no-wrap
+msgid ""
+"Design your templates\n"
+"=====================\n"
+msgstr ""
+"Diseñe sus plantillas\n"
+"=====================\n"
+
+#. type: Plain text
+#: orig/overview.txt:227
+msgid "The code above loads the ``news/year_archive.html`` template."
+msgstr "El código anterior carga la plantilla ``news/year_archive.html``."
+
+#. type: Plain text
+#: orig/overview.txt:232
+msgid ""
+"Django has a template search path, which allows you to minimize redundancy "
+"among templates. In your Django settings, you specify a list of directories "
+"to check for templates. If a template doesn't exist in the first directory, "
+"it checks the second, and so on."
+msgstr ""
+"Django tiene una ruta de búsqueda de plantillas, que le permite minimizar "
+"redundancia entre plantillas.  En su archivo de configuración de Django se "
+"especifica una lista de directorios para buscar plantillas.  Si una "
+"plantilla no se encuentra en el primero, se busca en el segundo y así "
+"sucesivamente."
+
+#. type: Plain text
+#: orig/overview.txt:235
+msgid ""
+"Let's say the ``news/year_archive.html`` template was found. Here's what "
+"that might look like:"
+msgstr ""
+"Supongamos que se encontró la plantilla ``news/year_archive.html``. Así es "
+"como podría lucir:"
+
+#. type: Plain text
+#: orig/overview.txt:237 orig/overview.txt:276
+msgid ".. code-block:: html+django"
+msgstr ".. code-block:: html+django"
+
+#. type: Plain text
+#: orig/overview.txt:239
+#, no-wrap
+msgid "    {% extends \"base.html\" %}\n"
+msgstr "    {% extends \"base.html\" %}\n"
+
+#. type: Plain text
+#: orig/overview.txt:241
+#, no-wrap
+msgid "    {% block title %}Articles for {{ year }}{% endblock %}\n"
+msgstr "    {% block title %}Artículos del {{ year }}{% endblock %}\n"
+
+#. type: Plain text
+#: orig/overview.txt:244
+#, no-wrap
+msgid ""
+"    {% block content %}\n"
+"    <h1>Articles for {{ year }}</h1>\n"
+msgstr ""
+"    {% block content %}\n"
+"    <h1>Artículos del {{ year }}</h1>\n"
+
+#. type: Plain text
+#: orig/overview.txt:251
+#, no-wrap
+msgid ""
+"    {% for article in article_list %}\n"
+"        <p>{{ article.headline }}</p>\n"
+"        <p>By {{ article.reporter.full_name }}</p>\n"
+"        <p>Published {{ article.pub_date|date:\"F j, Y\" }}</p>\n"
+"    {% endfor %}\n"
+"    {% endblock %}\n"
+msgstr ""
+"    {% for article in article_list %}\n"
+"        <p>{{ article.headline }}</p>\n"
+"        <p>Por {{ article.reporter.full_name }}</p>\n"
+"        <p>Publicado {{ article.pub_date|date:\"F j, Y\" }}</p>\n"
+"    {% endfor %}\n"
+"    {% endblock %}\n"
+
+#. type: Plain text
+#: orig/overview.txt:256
+msgid ""
+"Variables are surrounded by double-curly braces. ``{{ article.headline }}`` "
+"means \"Output the value of the article's headline attribute.\" But dots "
+"aren't used only for attribute lookup: They also can do dictionary-key "
+"lookup, index lookup and function calls."
+msgstr ""
+"Las variables están rodeadas por corchetes dobles. ``{{ article.headline "
+"}}`` significa \"Muestre el valor del titular del objeto artículo\".  Pero los "
+"puntos no se usan únicamente para atributos: También pueden servir como "
+"claves de diccionarios, índices y llamados a funciones."
+
+#. type: Plain text
+#: orig/overview.txt:262
+msgid ""
+"Note ``{{ article.pub_date|date:\"F j, Y\" }}`` uses a Unix-style \"pipe"
+"\" (the \"|\" character). This is called a template filter, and it's a way "
+"to filter the value of a variable. In this case, the date filter formats a "
+"Python datetime object in the given format (as found in PHP's date function; "
+"yes, there is one good idea in PHP)."
+msgstr ""
+"Tenga en cuenta que ``{{ article.pub_date|date:\"F j, Y\" }}`` usa una "
+"\"interconexión\" tipo Unix (el carácter \"|\").  Es a lo que llamamos un filtro "
+"de plantilla, y es una forma para filtrar valores de una variable.  En este "
+"caso, el filtro fecha da formato a un objeto de dato Python hora fecha en "
+"un formato dado(como se especifica en la función fecha de PHP; si, hay una "
+"buena idea en PHP)."
+
+#. type: Plain text
+#: orig/overview.txt:266
+msgid ""
+"You can chain together as many filters as you'd like. You can write custom "
+"filters. You can write custom template tags, which run custom Python code "
+"behind the scenes."
+msgstr ""
+"Puede enlazar tantos filtros como desee.  Puede crear sus propios filtros. "
+"Puede crear etiquetas de plantilla propias, que ejecutan código Python "
+"propio tras bambalinas."
+
+#. type: Plain text
+#: orig/overview.txt:272
+msgid ""
+"Finally, Django uses the concept of \"template inheritance\": That's what "
+"the ``{% extends \"base.html\" %}`` does. It means \"First load the template "
+"called 'base', which has defined a bunch of blocks, and fill the blocks with "
+"the following blocks.\" In short, that lets you dramatically cut down on "
+"redundancy in templates: each template has to define only what's unique to "
+"that template."
+msgstr ""
+"Finalmente, Django usa el concepto de \"herencia de plantillas\": Eso es lo "
+"que ``{% extends \"base.html\" %}`` hace.  Significa \"Primero llame la "
+"plantilla llamada 'base', que tiene definidos varios bloques, y llene los "
+"bloques con estos bloques.\"  En pocas palabras, le permite eliminar "
+"dramáticamente redundancia en plantillas: cada plantilla tiene que definir "
+"únicamente lo particular de la plantilla."
+
+#. type: Plain text
+#: orig/overview.txt:274
+msgid "Here's what the \"base.html\" template might look like:"
+msgstr ""
+"A continuación un ejemplo de cómo podría lucir la plantilla \"base.html\":"
+
+#. type: Plain text
+#: orig/overview.txt:286
+#, no-wrap
+msgid ""
+"    <html>\n"
+"    <head>\n"
+"        <title>{% block title %}{% endblock %}</title>\n"
+"    </head>\n"
+"    <body>\n"
+"        <img src=\"sitelogo.gif\" alt=\"Logo\" />\n"
+"        {% block content %}{% endblock %}\n"
+"    </body>\n"
+"    </html>\n"
+msgstr ""
+"    <html>\n"
+"    <head>\n"
+"        <title>{% block title %}{% endblock %}</title>\n"
+"    </head>\n"
+"    <body>\n"
+"        <img src=\"sitelogo.gif\" alt=\"Logo\" />\n"
+"        {% block content %}{% endblock %}\n"
+"    </body>\n"
+"    </html>\n"
+
+#. type: Plain text
+#: orig/overview.txt:290
+msgid ""
+"Simplistically, it defines the look-and-feel of the site (with the site's "
+"logo), and provides \"holes\" for child templates to fill. This makes a site "
+"redesign as easy as changing a single file -- the base template."
+msgstr ""
+"Sencillamente define el visual del sitio (con el logotipo del sitio), y "
+"provee \"huecos\" para que las plantillas hijas los llenen.  Esto hace que "
+"rediseñar un sitio resulte tan sencillo como cambiar un único fichero : la "
+"plantilla base."
+
+#. type: Plain text
+#: orig/overview.txt:295
+msgid ""
+"It also lets you create multiple versions of a site, with different base "
+"templates, while reusing child templates. Django's creators have used this "
+"technique to create strikingly different cell-phone editions of sites -- "
+"simply by creating a new base template."
+msgstr ""
+"También le permite crear múltiples versiones de un sitio, con diferentes "
+"plantillas base, reusando las hijas.  Los creadores de Django han usado esta "
+"técnica para crear versiones para teléfonos celulares impresionantemente "
+"distintas, únicamente creando una nueva plantilla base."
+
+#. type: Plain text
+#: orig/overview.txt:303
+msgid ""
+"Note that you don't have to use Django's template system if you prefer "
+"another system. While Django's template system is particularly well-"
+"integrated with Django's model layer, nothing forces you to use it. For that "
+"matter, you don't have to use Django's database API, either. You can use "
+"another database abstraction layer, you can read XML files, you can read "
+"files off disk, or anything you want. Each piece of Django -- models, views, "
+"templates -- is decoupled from the next."
+msgstr ""
+"Tenga en cuenta que no tiene que usar el sistema de plantillas de Django si "
+"prefiere otro sistema.  Aunque el sistema de plantillas de Django se "
+"encuentra sumamente bien integrado con la capa de modelos de Django, no "
+"estamos forzándolo a usarlo.  Así mismo, tampoco tiene que emplear el API de "
+"bases de datos de Django.  Puede usar otra capa de abstracción de bases de "
+"datos, puede leer archivos XML, puede leer del disco o de donde desee.  Cada "
+"pieza de Django : modelos, vistas, plantillas está desacoplada de la "
+"siguiente."
+
+#. type: Plain text
+#: orig/overview.txt:305
+#, no-wrap
+msgid ""
+"This is just the surface\n"
+"========================\n"
+msgstr ""
+"Esto es sólo el comienzo\n"
+"========================\n"
+
+#. type: Plain text
+#: orig/overview.txt:309
+msgid ""
+"This has been only a quick overview of Django's functionality. Some more "
+"useful features:"
+msgstr ""
+"Este fue solamente un vistazo rápido de las funcionalidades de Django. A "
+"continuación otras características útiles:"
+
+#. type: Bullet: '* '
+#: orig/overview.txt:312
+msgid ""
+"A :doc:`caching framework </topics/cache>` that integrates with memcached or "
+"other backends."
+msgstr ""
+"Un :doc:`framework para hacer caché </topics/cache>` que se integra con "
+"memcached y otros backends."
+
+#. type: Bullet: '* '
+#: orig/overview.txt:315
+msgid ""
+"A :doc:`syndication framework </ref/contrib/syndication>` that makes "
+"creating RSS and Atom feeds as easy as writing a small Python class."
+msgstr ""
+"Un :doc:`framework de sindicación </ref/contrib/syndication>` que permite "
+"crear feeds RSS y Atom con tan solo escribir una clase de Python."
+
+#. type: Bullet: '* '
+#: orig/overview.txt:318
+msgid ""
+"More sexy automatically-generated admin features -- this overview barely "
+"scratched the surface."
+msgstr ""
+"Más características sexies generadas automáticamente, este vistazo solamente "
+"arañó la superficie."
+
+#. type: Plain text
+#: orig/overview.txt:322
+msgid ""
+"The next obvious steps are for you to `download Django`_, read :doc:`the "
+"tutorial </intro/tutorial01>` and join `the community`_. Thanks for your "
+"interest!"
+msgstr ""
+"Los siguientes pasos obvios son `descargar Django`_, leer :doc:`el tutorial "
+"</intro/tutorial01>` y unirse a `la comunidad`_. Gracias por su interés!"
+
+#. type: Plain text
+#: orig/overview.txt:324
+msgid ""
+".. _download Django: https://www.djangoproject.com/download/ .. _the "
+"community: https://www.djangoproject.com/community/"
+msgstr ""
+".. _descargar Django: https://www.djangoproject.com/download/ .. _la "
+"comunidad: https://www.djangoproject.com/community/"
