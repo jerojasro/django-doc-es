@@ -973,12 +973,15 @@ msgid ""
 "The first step in writing a database Web app in Django is to define your "
 "models -- essentially, your database layout, with additional metadata."
 msgstr ""
+"El primer paso al crear una aplicación Web en Django es definir el modelo -- "
+"esencialmente, el esquema de base de datos, con metadatos adicionales."
 
 #. type: Plain text
 #: orig/tutorial01.txt:337 orig/tutorial01.txt:406
 msgid ".. admonition:: Philosophy"
-msgstr ""
+msgstr ".. admonition:: Filosofía"
 
+# TODO ver si se traduce DRY en el enlace al que se apunta desde acá.
 #. type: Plain text
 #: orig/tutorial01.txt:342
 #, no-wrap
@@ -988,6 +991,11 @@ msgid ""
 "   the :ref:`DRY Principle <dry>`. The goal is to define your data model in one\n"
 "   place and automatically derive things from it.\n"
 msgstr ""
+"    El modelo es la fuente única y definitiva de datos acerca de sus datos.\n"
+"    Contiene los campos y comportamientos esenciales de los datos que va a\n"
+"    almacenar. Django se guía por el :ref:`principio DRY <dry>`. El objetivo es\n"
+"    definir su modelo de datos en un único lugar y hacerlas\n"
+"    modificaciones/transformaciones necesarias desde ahí.\n"
 
 #. type: Plain text
 #: orig/tutorial01.txt:346
@@ -996,6 +1004,10 @@ msgid ""
 "has a question and a publication date. A choice has two fields: the text of "
 "the choice and a vote tally. Each choice is associated with a poll."
 msgstr ""
+"En nuestra aplicación de encuesta sencillas, crearemos dos modelos: polls "
+"(encuestas) y choices (opciones). Una encuesta tiene una pregunta y una fecha de "
+"publicación. Una opción tiene dos campos: el texto de la opción, y un contador "
+"de votos. Cada opción está asociada a una encuesta."
 
 #. type: Plain text
 #: orig/tutorial01.txt:349
