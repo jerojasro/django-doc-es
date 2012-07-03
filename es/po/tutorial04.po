@@ -1,26 +1,26 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Igor Támara <igor@tamarapatino.org>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2012-03-26 23:32-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2012-07-02 21:44-0500\n"
+"Last-Translator: Igor Támara <igor@tamarapatino.org>\n"
+"Language-Team: slec's translation team\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #. type: Plain text
 #: orig/tutorial04.txt:1
 #, no-wrap
 msgid "=====================================\n"
-msgstr ""
+msgstr "=====================================\n"
 
 #. type: Plain text
 #: orig/tutorial04.txt:3
@@ -29,6 +29,8 @@ msgid ""
 "Writing your first Django app, part 4\n"
 "=====================================\n"
 msgstr ""
+"Su primera aplicación en Django, parte 4\n"
+"========================================\n"
 
 #. type: Plain text
 #: orig/tutorial04.txt:8
@@ -37,6 +39,9 @@ msgid ""
 "We're continuing the Web-poll application and will focus on simple form "
 "processing and cutting down our code."
 msgstr ""
+"Este tutorial comienza en el punto en el que terminó el :doc:`Tutorial 3 "
+"</intro/tutorial03>`. Continuamos nuestra aplicación de votaciones y nos "
+"enfocaremos en procesar formularios y aligerar nuestro código."
 
 #. type: Plain text
 #: orig/tutorial04.txt:10
@@ -45,6 +50,8 @@ msgid ""
 "Write a simple form\n"
 "===================\n"
 msgstr ""
+"Crear un formulario sencillo\n"
+"============================\n"
 
 #. type: Plain text
 #: orig/tutorial04.txt:14
@@ -52,23 +59,26 @@ msgid ""
 "Let's update our poll detail template (\"polls/detail.html\") from the last "
 "tutorial, so that the template contains an HTML ``<form>`` element:"
 msgstr ""
+"Actualicemos nuestra plantilla detalle (\"polls/detail.html\") del tutorial "
+"anterior, para que contenga un elemento HTML ``<form>``:"
 
 #. type: Plain text
 #: orig/tutorial04.txt:16 orig/tutorial04.txt:166
 msgid ".. code-block:: html+django"
-msgstr ""
+msgstr ".. code-block:: html+django"
 
 #. type: Plain text
 #: orig/tutorial04.txt:18 orig/tutorial04.txt:168
 #, no-wrap
 msgid "    <h1>{{ poll.question }}</h1>\n"
-msgstr ""
+msgstr "    <h1>{{ poll.question }}</h1>\n"
 
 #. type: Plain text
 #: orig/tutorial04.txt:20
 #, no-wrap
 msgid "    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}\n"
-msgstr ""
+msgstr "    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% "
+"endif %}\n"
 
 #. type: Plain text
 #: orig/tutorial04.txt:29
@@ -83,11 +93,21 @@ msgid ""
 "    <input type=\"submit\" value=\"Vote\" />\n"
 "    </form>\n"
 msgstr ""
+"    <form action=\"/polls/{{ poll.id }}/vote/\" method=\"post\">\n"
+"    {% csrf_token %}\n"
+"    {% for choice in poll.choice_set.all %}\n"
+"        <input type=\"radio\" name=\"choice\" id=\"choice{{ forloop.counter }}\" "
+"value=\"{{ choice.id }}\" />\n"
+"        <label for=\"choice{{ forloop.counter }}\">{{ choice.choice "
+"}}</label><br />\n"
+"    {% endfor %}\n"
+"    <input type=\"submit\" value=\"Vote\" />\n"
+"    </form>\n"
 
 #. type: Plain text
 #: orig/tutorial04.txt:31
 msgid "A quick rundown:"
-msgstr ""
+msgstr "una explicación rápida:"
 
 #. type: Bullet: '* '
 #: orig/tutorial04.txt:37
@@ -98,6 +118,12 @@ msgid ""
 "selects one of the radio buttons and submits the form, it'll send the POST "
 "data ``choice=3``. This is HTML Forms 101."
 msgstr ""
+"La plantilla anterior muestra un botón de radio para cada elección de la "
+"encuesta. El ``valor`` de cada botón de radio está asociado al ID de una "
+"opción. El ``ǹombre`` de cada botón de radio es ``\"choice\"``. Esto significa "
+"que cuando alguien selecciona uno de los botones de radio y envía el "
+"formulario, enviará el dato POST ``choice=3``.  Esto es formularios HTML "
+"101."
 
 #. type: Bullet: '* '
 #: orig/tutorial04.txt:44
@@ -109,6 +135,13 @@ msgid ""
 "use ``method=\"post\"``. This tip isn't specific to Django; it's just good "
 "Web development practice."
 msgstr ""
+"Establecemos el ``action`` del formulario a ``/polls{{ poll.id }}/vote/``, y "
+"establecemos ``method=\"post\"``.  Usar ``method=\"post\"`` (en lugar de "
+"``method=\"get\"``) es muy importante, porque el acto de enviar este "
+"formulario modificará los datos en el lado del servidor. Cada vez que cree "
+"un formulario que altere los datos en el lado del servidor, use "
+"``method=\"post\"``. Este consejo no es específico para Django; es solamente "
+"una buena práctica de desarrollo web."
 
 #. type: Bullet: '* '
 #: orig/tutorial04.txt:47
@@ -116,6 +149,8 @@ msgid ""
 "``forloop.counter`` indicates how many times the :ttag:`for` tag has gone "
 "through its loop"
 msgstr ""
+"``forloop.counter`` indica cuántas veces la etiqueta :ttag:`for` ha pasado "
+"por el bucle"
 
 #. type: Bullet: '* '
 #: orig/tutorial04.txt:54
@@ -127,6 +162,13 @@ msgid ""
 "at internal URLs should use the :ttag:`{% csrf_token %}<csrf_token>` "
 "template tag."
 msgstr ""
+"Dado que estamos creando un formulario POST (que puede tener el efecto de "
+"modificar datos), necesitamos tener en cuenta las falsificaciones de "
+"terceros(CSRF). Afortunadamente no tiene que preocuparse demasiado, porque "
+"Django viene con un sistema muy sencillo para protgerse de las mismas. "
+"Resumiendo, todos los formularios POST que tengan como desinto URLs internas "
+"deberían usar la etiqueta de plantilla :ttag:`{% csrf_token %"
+"}<csrf_token>`."
 
 #. type: Plain text
 #: orig/tutorial04.txt:59
@@ -136,6 +178,10 @@ msgid ""
 "context. To fix this, a small adjustment needs to be made to the ``detail`` "
 "view, so that it looks like the following::"
 msgstr ""
+"La etiqueta :ttag:`{% csrf_token %}<csrf_token>` requiere información del "
+"objeto solicitud, al cual no se puede acceder normalmente desde el contexto "
+"de la plantilla. Para arreglarlo, basta un pequeño ajuste a la vista "
+"``detalle``, para que luzca de la siguiente forma::"
 
 #. type: Plain text
 #: orig/tutorial04.txt:66
@@ -148,6 +194,12 @@ msgid ""
 "        return render_to_response('polls/detail.html', {'poll': p},\n"
 "                                   context_instance=RequestContext(request))\n"
 msgstr ""
+"    from django.template import RequestContext\n"
+"    # ...\n"
+"    def detail(request, poll_id):\n"
+"        p = get_object_or_404(Poll, pk=poll_id)\n"
+"        return render_to_response('polls/detail.html', {'poll': p},\n"
+"                                  context_instance=RequestContext(request))\n"
 
 #. type: Plain text
 #: orig/tutorial04.txt:69
@@ -155,6 +207,8 @@ msgid ""
 "The details of how this works are explained in the documentation for :ref:"
 "`RequestContext <subclassing-context-requestcontext>`."
 msgstr ""
+"Los detalles de cómo funciona esto se explican en la documentación "
+":ref:`RequestContext <subclassing-context-requestcontext>`."
 
 #. type: Plain text
 #: orig/tutorial04.txt:73
@@ -163,12 +217,15 @@ msgid ""
 "something with it. Remember, in :doc:`Tutorial 3 </intro/tutorial03>`, we "
 "created a URLconf for the polls application that includes this line::"
 msgstr ""
+"Ahora creemos la vista de Django que se encarga de los datos enviados y hace "
+"algo con estos.  Recuerde que en el :doc:`Tutorial 3 </intro/tutorial03>` "
+"creamos un URLconf para la aplicación de encuestas que incluía esta línea::"
 
 #. type: Plain text
 #: orig/tutorial04.txt:75
 #, no-wrap
 msgid "    (r'^(?P<poll_id>\\d+)/vote/$', 'vote'),\n"
-msgstr ""
+msgstr "    (r'^(?P<poll_id>\\d+)/vote/$', 'vote'),\n"
 
 #. type: Plain text
 #: orig/tutorial04.txt:78
@@ -176,6 +233,8 @@ msgid ""
 "We also created a dummy implementation of the ``vote()`` function. Let's "
 "create a real version. Add the following to ``polls/views.py``::"
 msgstr ""
+"También creamos una implementación inocua de la función ``vote()``. Ahora "
+"creemos una versión real.  Añada lo siguiente a ``polls/views.py``::"
 
 #. type: Plain text
 #: orig/tutorial04.txt:102
@@ -205,6 +264,30 @@ msgid ""
 "            # user hits the Back button.\n"
 "            return HttpResponseRedirect(reverse('polls.views.results', args=(p.id,)))\n"
 msgstr ""
+"    from django.shortcuts import get_object_or_404, render_to_response\n"
+"    from django.http import HttpResponseRedirect, HttpResponse\n"
+"    from django.core.urlresolvers import reverse\n"
+"    from django.template import RequestContext\n"
+"    from polls.models import Choice, Poll\n"
+"    # ...\n"
+"    def vote(request, poll_id):\n"
+"        p = get_object_or_404(Poll, pk=poll_id)\n"
+"        try:\n"
+"            selected_choice = p.choice_set.get(pk=request.POST['choice'])\n"
+"        except (KeyError, Choice.DoesNotExist):\n"
+"            # mostrar de nuevo el formulario de votación.\n"
+"            return render_to_response('polls/detail.html', {\n"
+"                'poll': p,\n"
+"                'error_message': \"No eligió una opción.\",\n"
+"            }, context_instance=RequestContext(request))\n"
+"        else:\n"
+"            selected_choice.votes += 1\n"
+"            selected_choice.save()\n"
+"            # Siempre retorne un HttpResponseRedirect después de tratar un\n"
+"            # POST de datos exitoso. Esto impide que se añada dos veces\n"
+"            # Si se oprime el botón atrás del navegador.\n"
+"            return HttpResponseRedirect(reverse('polls.views.results', "
+"args=(p.id,)))\n"
 
 #. type: Plain text
 #: orig/tutorial04.txt:104
