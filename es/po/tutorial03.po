@@ -1,26 +1,28 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Igor Támara <igor@tamarapatino.org>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2012-03-26 23:32-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2012-08-07 19:37-0500\n"
+"Last-Translator: Igor Támara <igor@tamarapatino.org>\n"
+"Language-Team: slec's translation team\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #. type: Plain text
 #: orig/tutorial03.txt:1
 #, no-wrap
 msgid "=====================================\n"
 msgstr ""
+"===========================================\n"
+"\n"
 
 #. type: Plain text
 #: orig/tutorial03.txt:3
@@ -29,6 +31,8 @@ msgid ""
 "Writing your first Django app, part 3\n"
 "=====================================\n"
 msgstr ""
+"Su primera aplicación en Django app, part 3\n"
+"===========================================\n"
 
 #. type: Plain text
 #: orig/tutorial03.txt:8
@@ -37,6 +41,9 @@ msgid ""
 "We're continuing the Web-poll application and will focus on creating the "
 "public interface -- \"views.\""
 msgstr ""
+"Este tutorial comienza donde quedó el :doc:`Tutorial 2 </intro/tutorial02>`. "
+"Continuamos con la aplicación Web de encuestas y nos enfocaremos a crear la "
+"interfaz pública -- \"vistas.\""
 
 #. type: Plain text
 #: orig/tutorial03.txt:10
@@ -45,6 +52,8 @@ msgid ""
 "Philosophy\n"
 "==========\n"
 msgstr ""
+"Filosofía\n"
+"=========\n"
 
 #. type: Plain text
 #: orig/tutorial03.txt:15
@@ -53,16 +62,21 @@ msgid ""
 "serves a specific function and has a specific template. For example, in a "
 "Weblog application, you might have the following views:"
 msgstr ""
+"Una vista es un \"tipo\" de página Web en su aplicación Django que "
+"generalmente sirve para una función específica y tiene una plantilla "
+"específica. Por ejemplo, en una aplicación Blog puede tener las siguientes "
+"vistas:"
 
 #. type: Bullet: '* '
 #: orig/tutorial03.txt:17
 msgid "Blog homepage -- displays the latest few entries."
-msgstr ""
+msgstr "Inicio del Blog -- muestra las entradas más recientes."
 
 #. type: Bullet: '* '
 #: orig/tutorial03.txt:19
 msgid "Entry \"detail\" page -- permalink page for a single entry."
 msgstr ""
+"página de \"detalle\" de la entrada -- página permanente para una entrada."
 
 #. type: Bullet: '* '
 #: orig/tutorial03.txt:22
@@ -70,6 +84,8 @@ msgid ""
 "Year-based archive page -- displays all months with entries in the given "
 "year."
 msgstr ""
+"Página de archivo por año -- Muestra todos los meses que tienen entradas en "
+"un año dado."
 
 #. type: Bullet: '* '
 #: orig/tutorial03.txt:25
@@ -77,26 +93,30 @@ msgid ""
 "Month-based archive page -- displays all days with entries in the given "
 "month."
 msgstr ""
+"Página de archivo mensual -- despliega todos los días que tuvieron entradas "
+"en un mes dado."
 
 #. type: Bullet: '* '
 #: orig/tutorial03.txt:27
 msgid "Day-based archive page -- displays all entries in the given day."
-msgstr ""
+msgstr "Página de archivo diario -- muestra todas las entradas en un día dado."
 
 #. type: Bullet: '* '
 #: orig/tutorial03.txt:29
 msgid "Comment action -- handles posting comments to a given entry."
 msgstr ""
+"Acción de comentar -- Se encarga de recibir comentarios para una entrada "
+"dada."
 
 #. type: Plain text
 #: orig/tutorial03.txt:31
 msgid "In our poll application, we'll have the following four views:"
-msgstr ""
+msgstr "En nuestra aplicación de encuestas tendremos las siguientes vistas:"
 
 #. type: Bullet: '* '
 #: orig/tutorial03.txt:33
 msgid "Poll \"index\" page -- displays the latest few polls."
-msgstr ""
+msgstr "Página inicial de Encuestas -- muestra las encuestas más recientes."
 
 #. type: Bullet: '* '
 #: orig/tutorial03.txt:36
@@ -104,22 +124,28 @@ msgid ""
 "Poll \"detail\" page -- displays a poll question, with no results but with a "
 "form to vote."
 msgstr ""
+"Página de detalle de encuesta -- despliega una pregunta de la encuesta, sin "
+"resultados pero con un formulario para votar."
 
 #. type: Bullet: '* '
 #: orig/tutorial03.txt:38
 msgid "Poll \"results\" page -- displays results for a particular poll."
 msgstr ""
+"Página de resultados de encuesta -- Muestra los resultados para una encuesta "
+"particular."
 
 #. type: Bullet: '* '
 #: orig/tutorial03.txt:41
 msgid ""
 "Vote action -- handles voting for a particular choice in a particular poll."
 msgstr ""
+"Acción de votar -- maneja la votación para una elección en una encuesta en "
+"particular."
 
 #. type: Plain text
 #: orig/tutorial03.txt:43
 msgid "In Django, each view is represented by a simple Python function."
-msgstr ""
+msgstr "En Django cada vista se representa como una función sencilla de Python."
 
 #. type: Plain text
 #: orig/tutorial03.txt:45
@@ -128,6 +154,8 @@ msgid ""
 "Design your URLs\n"
 "================\n"
 msgstr ""
+"Diseñe sus URLs\n"
+"===============\n"
 
 #. type: Plain text
 #: orig/tutorial03.txt:50
@@ -136,6 +164,9 @@ msgid ""
 "by creating a Python module, called a URLconf. URLconfs are how Django "
 "associates a given URL with given Python code."
 msgstr ""
+"El primer paso para escribir vistas es diseñar su estructura de URL. Lo hace "
+"creando un módulo Python, llamado URLconf. Los URLconfs son la forma "
+"mediante la cual Django asocia una URL dada con código Python."
 
 #. type: Plain text
 #: orig/tutorial03.txt:55
@@ -145,12 +176,18 @@ msgid ""
 "Django loads that module and looks for a module-level variable called "
 "``urlpatterns``, which is a sequence of tuples in the following format::"
 msgstr ""
+"Cuando un usuario solicita una página servida por Django el sistema mira la "
+"configuración :setting:`ROOT_URLCONF`, que contiene una cadena Python con "
+"sintaxis de punto. Django carga el módulo y busca una variable de nivel de "
+"módulo llamada ``patrónurl``, que es una secuencia de tuplas con el "
+"siguiente formato::"
 
 #. type: Plain text
 #: orig/tutorial03.txt:57
 #, no-wrap
 msgid "    (regular expression, Python callback function [, optional dictionary])\n"
-msgstr ""
+msgstr "    (expresión regular, función de respuesta Python [, diccionario "
+"opcional])\n"
 
 #. type: Plain text
 #: orig/tutorial03.txt:61
@@ -159,6 +196,9 @@ msgid ""
 "list, comparing the requested URL against each regular expression until it "
 "finds one that matches."
 msgstr ""
+"Django comienza con la primera expresión regular y va hacia abajo en la "
+"lista, comparando la URL solicitada frente a cada expresión regular hasta "
+"que encuentra una que coincida"
 
 #. type: Plain text
 #: orig/tutorial03.txt:67
@@ -169,6 +209,11 @@ msgid ""
 "arbitrary keyword arguments from the dictionary (an optional third item in "
 "the tuple)."
 msgstr ""
+"Cuando encuentra una coincidencia, Django ejecuta la función de respuesta "
+"Python, con un objeto :class:`~django.http.HttpRequest` como primer "
+"argumento, cualquier valor \"capturado\" en las expresiones regulares como "
+"argumento clave y opcionalmente argumentos clave arbitrarios del diccionario "
+"(un tercer elemento opcional en la tupla)."
 
 #. type: Plain text
 #: orig/tutorial03.txt:71
@@ -177,6 +222,9 @@ msgid ""
 "request-response`. For more details on URLconfs, see the :doc:`/topics/http/"
 "urls`."
 msgstr ""
+"Para saber más acerca de los objetos :class:`~django.http.HttpRequest` vea "
+":doc:`/ref/request-response`. Más detalles acerca de URLconfs en "
+":doc:`/topics/http/urls`."
 
 #. type: Plain text
 #: orig/tutorial03.txt:76
